@@ -1,0 +1,37 @@
+#pagina{
+	display: flex;
+	height: 100%;
+}
+
+#menu-principal{
+	width: 20%;
+	background: #eee;
+}
+
+#menu-principal a{
+	display: block;
+	border-bottom: 1px solid #eee;
+	padding: 15px;
+	color: #000;
+	text-decoration: none;	
+	background: #eee;
+}
+
+#menu-principal a:last-child{
+	border: 0;
+}
+
+#menu-principal a.pagina-actual{
+	background: #fff !important;
+	font-weight: bold;
+}
+
+#menu-principal a:hover{
+	background: #ddd;
+	font-weight: bold;
+}
+
+#contenido{
+	width: 80%;
+	padding: 15px;
+}
