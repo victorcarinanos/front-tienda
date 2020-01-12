@@ -1,1 +1,17 @@
-<p>login works!</p>
+<form *ngIf="!usuario" #formLogin="ngForm" (ngSubmit)="onSubmit(formLogin)">
+	<p *ngIf="mensajeError">{{mensajeError}}</p>
+	<label for="email">Email:</label>
+	<input type="mail" name="email" #email="ngModel" [(ngModel)]="login.email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required="required">
+	<span class="msg-error-form" *ngIf="email.touched && !email.valid">El campo email no es correcto</span>
+	
+	<label for="pass">Contraseña</label>
+	<input type="password" name="pass" #pass="ngModel" [(ngModel)]="login.pass" minlength="6" required="required">
+	<span class="msg-error-form" *ngIf="pass.touched && !pass.valid">La contraseña debe tener al menos 6 caracteres</span>
+	
+	<input type="submit" name="enviar-login" value="Registrarse" [disabled]="!formLogin.form.valid">
+</form>
+
+<p *ngIf="usuario">
+	Bienvenido {{usuario.nombre}}<br>
+	<button (click)="logout()">Cerrar sesisón</button>
+</p>

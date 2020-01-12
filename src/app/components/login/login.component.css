@@ -1,0 +1,29 @@
+form label{
+	display: block;
+}
+
+form input{
+	display: block;
+	margin-bottom: 10px;
+	padding: 5px 10px;
+}
+
+form input[type="submit"]{
+	background: #00478B;
+	border: 2px solid #00478B;
+    color: #fff;
+    padding: 12px 30px 10px;
+    text-transform: uppercase;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+form input[type="submit"]:hover{
+	background: #fff;
+	color: #00478B;
+}
+
+form input[type="submit"]:disabled{
+	opacity: .5;
+	cursor: not-allowed;
+}
