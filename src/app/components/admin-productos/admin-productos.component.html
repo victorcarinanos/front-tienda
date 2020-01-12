@@ -1,0 +1,27 @@
+<h1>{{titulo}}</h1>
+
+<form #formProductos="ngForm" (ngSubmit)="onSubmit(formProductos)">	
+	<label for="nombre">Nombre</label>
+	<input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="producto.nombre">
+	
+	<label for="precio">Precio</label>
+	<input type="text" name="precio" #precio="ngModel" [(ngModel)]="producto.precio">
+	
+	<label for="categoria">Categoria</label>
+	<select name="categoria" #categoria="ngModel" [(ngModel)]="producto.categoria">
+		<option value="">-- Selecciona una categoría --</option>
+		<option value="colchones">Colchones</option>
+		<option value="somieres">Somieres</option>
+	</select>
+	
+	<label for="descripcion">Descripción</label>
+	<textarea name="descripcion" #descripcion="ngModel" [(ngModel)]="producto.descripcion"></textarea>
+	
+	<label for="destacado">
+		<input type="checkbox" name="destacado" #destacado="ngModel" [(ngModel)]="producto.destacado">
+		Producto destacado
+	</label>
+	
+	<input type="submit" value="Guardar">
+	<p *ngIf="mensaje">{{mensaje}}</p>
+</form>
