@@ -1,1 +1,19 @@
-<p>producto works!</p>
+<div id="info-producto">
+	<figure>
+		<img src="{{producto.imagen}}">
+	</figure>
+	
+	<div>
+		<h1 class="titulo">{{producto.nombre}}</h1>
+		<p class="precio">{{producto.precio}}€</p>
+		
+		<div class="descripcion">{{producto.descripcion}}</div>
+		
+		<button>Añadir al carrito</button>
+		
+		<div id="botones-admin" *ngIf="usuario.admin">
+			<button [routerLink]="['/modificar-producto/'+producto._id]">Modificar</button>
+			<button (click)="eliminarProductoPorId(producto._id, $event)">Eliminar</button>
+		</div>
+	</div>
+</div>

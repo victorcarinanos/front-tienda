@@ -1,0 +1,55 @@
+#info-producto{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+#info-producto > *{
+	width: 49%;
+}
+
+#info-producto figure{
+	margin: 0;
+	text-align: center;
+}
+
+#info-producto figure img{
+	max-width: 100%;
+}
+
+#info-producto > div .titulo{
+	color: #333;
+	text-transform: capitalize;
+}
+
+#info-producto > div button{
+	background: #00478B;
+	border: 2px solid #00478B;
+    color: #fff;
+    padding: 12px 30px 10px;
+    text-transform: uppercase;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+#info-producto > div button:hover{
+	background: #fff;
+	color: #00478B;
+}
+
+#botones-admin button{
+	margin-right: 15px;
+	background-color: #eee !important;
+	color: #333 !important;
+	border-color: #eee !important;
+}
+
+@media (max-width: 601px) {
+	#info-producto{
+		flex-wrap: wrap;
+	}
+
+	#info-producto > *{
+		width: 100%;
+	}
+}
