@@ -1,0 +1,11 @@
+<h3 class="titulo-seccion">Productos destacados</h3>
+
+<div class="lista-productos">
+	<div *ngFor="let iProducto of aProductos; let indice = index">
+		<a [routerLink]="['/'+iProducto.categoria+'/'+iProducto._id]">
+			<img src="{{iProducto.imagen}}">
+			<h4>{{iProducto.nombre}}</h4>
+			<p class="precio">{{iProducto.precio}}€</p>
+		</a>
+	</div>
+</div>
