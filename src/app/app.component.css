@@ -1,18 +1,37 @@
-#pagina{
-	display: flex;
-	height: 100%;
+/* Contenedor principal */
+html{
+	overflow-x: hidden;
 }
 
+header{
+	height: 45px;
+    background: #00478B;
+}
+
+#btn-menu{
+	color: #fff;
+    text-transform: uppercase;
+    padding: 13px;
+    display: none;
+}
+
+#pagina{
+	display: flex;
+	height: calc(100% - 45px);
+}
+
+/* Menú principal */
 #menu-principal{
 	width: 20%;
 	background: #eee;
+	padding-top: 15px;
 }
 
 #menu-principal a{
 	display: block;
 	border-bottom: 1px solid #eee;
 	padding: 15px;
-	color: #000;
+	color: #333;
 	text-decoration: none;	
 	background: #eee;
 }
@@ -31,7 +50,31 @@
 	font-weight: bold;
 }
 
+/* Contenido */
 #contenido{
 	width: 80%;
 	padding: 15px;
+	overflow-y: auto;
+}
+
+@media (max-width: 601px) {
+	#btn-menu{
+		display: inline-block;
+	}
+	
+	#menu-principal{
+		width: 80%;
+	    height: 100%;
+	    position: absolute;
+		left: -100%;
+		transition: all .3s;
+	}
+	
+	#menu-principal.visible{
+		left: 0;
+	}
+	
+	#contenido{
+		width: 100%;
+	}
 }

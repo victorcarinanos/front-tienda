@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'front-tienda';
+  	title = 'front-tienda';
+  	
+  	/*
+  	 * Muestra y oculta el menú en la versión responsive
+  	 */
+  	mostrarMenu(){
+  		var menu = document.getElementById("menu-principal");
+  		if(menu.classList.contains("visible")){
+  			menu.classList.remove("visible");
+  		}
+  		else{
+  			menu.classList.add("visible");
+  		}
+  	}
 }
